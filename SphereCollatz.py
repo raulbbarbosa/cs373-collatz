@@ -34,11 +34,11 @@ def collatz_read (r, a) :
 
 def collatz_is_odd(n) :
 
-    if n%2==1 :
+    if n & 1 == 1 :
         return True
     else :
         return False
-        
+
 # ------------
 # collatz_cycle
 # ------------    
@@ -51,11 +51,13 @@ def collatz_cycle (n) :
     else :
         cycles = 1
         while n > 1 :
-            if collatz_is_odd(n) :
-                n = 3*n+1
+            if n & 1 == 1 :
+                n = n + (n >> 1) + 1
+                cycles = cycles + 2
             else  :
-                n = n/2
-            cycles = cycles + 1
+                n = n >> 1
+                cycles = cycles + 1
+            
             
         return cycles
 
@@ -76,7 +78,10 @@ def collatz_eval (i, j) :
        temp = i
        i = j
        j = temp
-	
+       
+    if( i <= (j >>1)) :
+        i = j >> 1
+
     current = i
     while current <= j :
 
