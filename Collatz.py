@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 
-# ---------------------------
-# projects/collatz/Collatz.py
-# Copyright (C) 2012
-# Glenn P. Downing & Raul B. Barbosa
-# ---------------------------
+"""---------------------------
+projects/collatz/Collatz.py
+Copyright (C) 2012
+Author(s): Glenn P. Downing & Raul B. Barbosa
+---------------------------
+"""
+cache = {1 : 1}
 
 # ------------
 # collatz_read
 # ------------
-
-cache = {1 : 1}
 
 def collatz_read (r, a) :
     """
@@ -35,7 +35,11 @@ def collatz_read (r, a) :
 # ------------
 
 def collatz_is_odd(n) :
+    """
+    n is a number
+    return true if n is odd, false otherwise
 
+    """
     if n & 1 == 1 :
         return True
     else :
@@ -47,34 +51,24 @@ def collatz_is_odd(n) :
 
 
 def collatz_cycle (n) :
+    """
+    n is an int
+    return the cycle lenght of n using a memoization fashion 
+
+    """
     global cache
     assert n > 0
-    
     if n == 1 :
         return 1
-    
-    original_n = n
-    cycles = 1
-    while n > 1 :
         
-        if collatz_is_odd(n) :
-            if n not in cache :
-                n = n + (n >> 1) + 1
-                cycles = cycles + 2   
-            else :
-                    
-                cycles = cycles + cache[n] -1
-                break            
-        else :
-            if n not in cache :
-                n = n >> 1
-                cycles = cycles + 1   
-            else :
-                cycles = cycles + cache[n] -1
-                break  
-    cache[original_n] = cycles
-    
-    return cache[original_n]
+    elif collatz_is_odd(n) :
+        if n not in cache :
+            cache[n] = 2 + collatz_cycle(n + (n >> 1) + 1)
+        return cache[n]
+    else :
+        if n not in cache :
+            cache[n] = 1 + collatz_cycle(n >> 1)
+        return cache[n] 
        
 # ------------
 # collatz_eval
@@ -104,7 +98,7 @@ def collatz_eval (i, j) :
         assert temp_v > 0
         if  current == i :
             v = temp_v
-        elif temp_v > v : # Should I put an assert here?
+        elif temp_v > v : 
             v = temp_v
             
         current = current + 1

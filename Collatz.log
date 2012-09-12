@@ -1,0 +1,41 @@
+commit 1c224b401dd6c74cf5cabdf1694708ad7b6dc3d3
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 18:39:49 2012 -0500
+
+    Just trying to randomize the cache( unsuccessfully). closes #20
+
+commit dea0a49eb445fc5bf47a3425a2ff6ea696e9cfb3
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 16:52:23 2012 -0500
+
+    Attempt of caching iteration based. Performance slow down, plus minor modifications in test file closes #19
+
+commit 0efe459e28285101acd49501a93b4bce25a0bb8a
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 16:05:44 2012 -0500
+
+    Meta caching based ( which gives us a performance slowdown) + done with tests.  closes #5 closes #6
+
+commit 3d2a43d48acc37b0ad53138f801a464d3cfd5265
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 06:29:07 2012 -0500
+
+    Accepted version (only could make it implementing with cache -  memoization, or lazy strategy - using dictionary ). This was the simplest cache that I have thought about. Tests are a little bit strange, because cache is a variable from Collatz module, so we have to import it too. All "collatz" methods have at least 4 test methods.
+
+commit 6d0e518fc876ba9f7cf15fbd409cadcc45162749
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 02:17:38 2012 -0500
+
+    Trying recursion, but does not seem to work too.
+
+commit b4dffd88d371b0116bad6457c55af5695772acc8
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 01:42:20 2012 -0500
+
+    Trying both quizzes improvements plus some bit operations
+
+commit 204b79339a0a6a5a1577de7701d603052b1852ac
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 00:03:37 2012 -0500
+
+    Learning how to use git. Hope it works. Sphere is giving TLE, but program seems to be correct.
