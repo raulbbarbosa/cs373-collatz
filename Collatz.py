@@ -10,7 +10,7 @@
 # collatz_read
 # ------------
 
-cache = {1:1}
+cache = {1 : 1}
 
 def collatz_read (r, a) :
     """
@@ -43,22 +43,39 @@ def collatz_is_odd(n) :
 
 # ------------
 # collatz_cycle
-# ------------    
+# ------------
+
 
 def collatz_cycle (n) :
-    global cache	
+    global cache
     assert n > 0
+    
     if n == 1 :
         return 1
+    
+    original_n = n
+    cycles = 1
+    while n > 1 :
         
-    elif collatz_is_odd(n) :
-        if n not in cache :
-            cache[n] = 2 + collatz_cycle(n + (n >> 1) + 1)
-        return cache[n]    
-    else :
-        if n not in cache :
-            cache[n] = 1 + collatz_cycle(n >> 1) 
-        return cache[n]    
+        if collatz_is_odd(n) :
+            if n not in cache :
+                n = n + (n >> 1) + 1
+                cycles = cycles + 2   
+            else :
+                    
+                cycles = cycles + cache[n] -1
+                break            
+        else :
+            if n not in cache :
+                n = n >> 1
+                cycles = cycles + 1   
+            else :
+                cycles = cycles + cache[n] -1
+                break  
+    cache[original_n] = cycles
+    
+    return cache[original_n]
+       
 # ------------
 # collatz_eval
 # ------------

@@ -62,7 +62,7 @@ class TestCollatz (unittest.TestCase) :
         self.assert_(b    == True)
         self.assert_(a[0] ==  10002)
         self.assert_(a[1] == 2)
-        
+            
     # ----
     # eval
     # ----
@@ -119,14 +119,14 @@ class TestCollatz (unittest.TestCase) :
         v = collatz_cycle(3)
         self.assert_(v == 8)
 
-    def test_cyle_3 (self) :
+    def test_cycle_3 (self) :
         v = collatz_cycle(1000000)
         self.assert_(v == 153)
 
     def test_cycle_4 (self) :
         v = collatz_cycle(27)
         self.assert_(v == 112)
- 
+    
     # ----- 
     # is_odd
     # -----
