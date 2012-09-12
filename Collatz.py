@@ -46,7 +46,7 @@ def collatz_is_odd(n) :
 # ------------    
 
 def collatz_cycle (n) :
-
+    global cache	
     assert n > 0
     if n == 1 :
         return 1

@@ -20,7 +20,7 @@ To test the program:
 import StringIO
 import unittest
 
-from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, collatz_is_odd, collatz_cycle, cache
+from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, collatz_is_odd, collatz_cycle
 
 # -----------
 # TestCollatz
@@ -180,6 +180,5 @@ class TestCollatz (unittest.TestCase) :
 # ----
 
 print "TestCollatz.py"
-cache = { 1: 1}
 unittest.main()
 print "Done."
