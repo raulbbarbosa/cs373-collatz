@@ -48,18 +48,10 @@ def collatz_cycle (n) :
     assert n > 0 
     if n == 1 :
         return 1
+    elif collatz_is_odd(n) :
+        return 2 + collatz_cycle(n + (n >> 1) + 1)
     else :
-        cycles = 1
-        while n > 1 :
-            if n & 1 == 1 :
-                n = n + (n >> 1) + 1
-                cycles = cycles + 2
-            else  :
-                n = n >> 1
-                cycles = cycles + 1
-            
-            
-        return cycles
+        return 1 + collatz_cycle(n >> 1) 
 
 # ------------
 # collatz_eval
