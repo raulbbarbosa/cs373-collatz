@@ -10,6 +10,8 @@
 # collatz_read
 # ------------
 
+cache = { 1: 1}
+
 def collatz_read (r, a) :
     """
     reads two ints into a[0] and a[1]
@@ -45,14 +47,18 @@ def collatz_is_odd(n) :
 
 def collatz_cycle (n) :
 
-    assert n > 0 
+    assert n > 0
     if n == 1 :
         return 1
+        
     elif collatz_is_odd(n) :
-        return 2 + collatz_cycle(n + (n >> 1) + 1)
+        if n not in cache :
+            cache[n] = 2 + collatz_cycle(n + (n >> 1) + 1)
+        return cache[n]    
     else :
-        return 1 + collatz_cycle(n >> 1) 
-
+        if n not in cache :
+            cache[n] = 1 + collatz_cycle(n >> 1) 
+        return cache[n]    
 # ------------
 # collatz_eval
 # ------------
@@ -73,7 +79,7 @@ def collatz_eval (i, j) :
        
     if( i <= (j >>1)) :
         i = j >> 1
-
+    
     current = i
     while current <= j :
 
@@ -114,6 +120,7 @@ def collatz_solve (r, w) :
     w is a writer
     """
     a = [0, 0]
+    
     while collatz_read(r, a) :
         v = collatz_eval(a[0], a[1])
         collatz_print(w, a[0], a[1], v)
