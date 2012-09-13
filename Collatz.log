@@ -1,3 +1,9 @@
+commit 7514ef6b34530dec4378f8636072a20793a37249
+Author: Raul <raul@ubuntu.(none)>
+Date:   Wed Sep 12 18:50:19 2012 -0500
+
+    Probably last commit. Final Collatz.py and SphereCollatz.py. Closing some issues. closes #3
+
 commit 1c224b401dd6c74cf5cabdf1694708ad7b6dc3d3
 Author: Raul <raul@ubuntu.(none)>
 Date:   Wed Sep 12 18:39:49 2012 -0500

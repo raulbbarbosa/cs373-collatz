@@ -9,7 +9,7 @@ Last Name: Bezerra Barbosa
 EID: rb35468
 E-mail: raulbbarbosa@gmail.com
 Estimated number of hours: 12h
-Actual    number of hours: 
+Actual    number of hours: 20h
 
 Turnin CS Username: rbarbosa
 GitHub ID: raulbbarbosa
